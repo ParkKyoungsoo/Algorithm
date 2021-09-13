@@ -1,0 +1,29 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.List;
+import java.util.StringTokenizer;
+import java.util.TreeSet;
+
+public class Main_10819_s_차이를최대로 {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		TreeSet<Integer> ts = new TreeSet<>();
+		
+		StringTokenizer str = new StringTokenizer(br.readLine());
+		for(int i = 0; i < n; i++) {
+			ts.add(Integer.parseInt(str.nextToken()));
+		}
+		
+		Deque<Integer> dq = new ArrayDeque<>();
+		dq.add(ts.first());
+		
+		System.out.println(ts.toString());
+	}
+}

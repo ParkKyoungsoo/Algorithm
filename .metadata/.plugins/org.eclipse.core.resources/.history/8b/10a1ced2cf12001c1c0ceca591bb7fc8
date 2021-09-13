@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+public class Main_2751_s_수정렬하기2 {
+
+	
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int n = Integer.parseInt(br.readLine());
+		boolean[] numArray = new boolean[1000001];
+		for(int i = 0; i < n; i++  ) {
+			numArray[Integer.parseInt(br.readLine())] = true; 
+		}
+		
+		for(int i = 1; i <= numArray.length;i++) {
+			if(numArray[i]) {
+				System.out.println(i);
+			} else {
+				continue;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+public class Main_10872_b_ÆÑÅä¸®¾ó {
+
+	public static void main(String[] args) {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			
+		int N = Integer.parseInt(br.readLine());
+		
+		
+	}
+}

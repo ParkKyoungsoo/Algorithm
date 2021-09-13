@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Main_2588_°ö¼À {
+
+	public static void main(String[] args) throws IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int a = 0;
+		char[] b = new char[3];
+		
+		StringTokenizer str = new StringTokenizer(br.readLine());			
+		a = Integer.parseInt(str.nextToken());
+		str = new StringTokenizer(br.readLine());
+		char[] bArr = str.nextToken().toCharArray();
+		System.out.println(bArr[1] * a);
+		
+	}
+	
+}

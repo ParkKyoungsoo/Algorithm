@@ -1,0 +1,42 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class Main_2309_b_¿œ∞ˆ≥≠¿Ô¿Ã {
+
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		ArrayList<Integer> dwarfTall = new ArrayList<Integer>();
+		int tallSum = 0;
+		for(int i = 0; i < 9; i++) {
+			int tall = Integer.parseInt(br.readLine());
+			dwarfTall.add(tall);
+			tallSum += tall;
+		}
+		
+		
+		outer: for(int i = 0; i < 8; i++) {
+			for(int j = i+1; j < 9; j++) {
+				int calc = tallSum;
+				System.out.println(i + " " + j);
+				System.out.println(dwarfTall.get(i));				
+				System.out.println(dwarfTall.get(j));				
+				System.out.println(calc - dwarfTall.get(i) - dwarfTall.get(j));
+				if(calc - dwarfTall.get(i) - dwarfTall.get(j) == 100) {
+					dwarfTall.remove(i);
+					dwarfTall.remove(j);
+					break outer;
+				}
+			}
+		}
+//		Collections.sort(dwarfTall);
+		
+		for(int i = 0; i < 7; i++) {
+			System.out.println(dwarfTall.get(i));
+		}
+	}
+	
+}

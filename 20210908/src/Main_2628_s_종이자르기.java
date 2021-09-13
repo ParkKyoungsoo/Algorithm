@@ -1,0 +1,60 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
+
+public class Main_2628_s_종이자르기 {
+
+	public static void main(String[] args) throws IOException {
+		
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer str = new StringTokenizer(br.readLine());
+		int width = Integer.parseInt(str.nextToken());
+		int height = Integer.parseInt(str.nextToken());
+		
+		int t = Integer.parseInt(br.readLine());
+			
+		List<Integer> widthList = new ArrayList<>();
+		List<Integer> heightList = new ArrayList<>();
+		
+		for(int i = 0; i < t; i++) {
+			str = new StringTokenizer(br.readLine());
+			if(Integer.parseInt(str.nextToken()) == 0) {
+				heightList.add(Integer.parseInt(str.nextToken()));
+			} else {
+				widthList.add(Integer.parseInt(str.nextToken()));
+			}
+		}
+		heightList.add(0);
+		heightList.add(height);
+		
+		widthList.add(0);
+		widthList.add(width);
+		
+		Collections.sort(heightList);
+		Collections.sort(widthList);
+		
+		int widthMaxValue = Integer.MIN_VALUE;
+		int heightMaxValue = Integer.MIN_VALUE;
+		
+		for(int i = 0; i < widthList.size() - 1; i++) {
+			if(widthList.get(i + 1) - widthList.get(i) > widthMaxValue ) {
+				widthMaxValue = widthList.get(i + 1) - widthList.get(i);
+			}
+		}
+		
+		for(int i = 0; i < heightList.size() - 1; i++) {
+			if(heightList.get(i + 1) - heightList.get(i) > heightMaxValue  ) {
+				
+				heightMaxValue = heightList.get(i + 1) - heightList.get(i);
+			}
+		}
+		
+		System.out.println(widthMaxValue * heightMaxValue);
+	}
+}
