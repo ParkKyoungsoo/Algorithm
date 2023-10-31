@@ -85,6 +85,9 @@ public class App {
       List<Node> nextList = map.get(cur.end);
       visited[cur.end] = true;
       List<Integer> curPath = new ArrayList<>(cur.path);
+      if (valueMap[cur.end] < cur.value) {
+        continue;
+      }
 
       for (Node next : nextList) {
         List<Integer> newPath = new ArrayList<>(curPath);
