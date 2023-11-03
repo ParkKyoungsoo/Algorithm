@@ -7,22 +7,22 @@ import java.util.List;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-class Node implements Comparable<Node> {
-  int end;
-  int time;
-
-  Node(int end, int time) {
-    this.end = end;
-    this.time = time;
-  }
-
-  @Override
-  public int compareTo(Node o) {
-    return time - o.time;
-  }
-}
-
 public class App {
+
+  class Node implements Comparable<Node> {
+    int end;
+    int time;
+
+    Node(int end, int time) {
+      this.end = end;
+      this.time = time;
+    }
+
+    @Override
+    public int compareTo(Node o) {
+      return time - o.time;
+    }
+  }
 
   static int N, K;
   static int[] map;
